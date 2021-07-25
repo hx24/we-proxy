@@ -1,9 +1,18 @@
-const electron = require('electron');
+const { ipcMain, app, Menu, BrowserWindow } = require('electron');
 const menuTemplate = require('./menu.js');
-const ipcMain = electron.ipcMain;
-const app = electron.app;
-const Menu = electron.Menu;
-const BrowserWindow = electron.BrowserWindow;
+
+
+// try {
+// 	require('electron-reloader')(module);
+// } catch {}
+
+process.on('uncaughtException', function(err) {
+    console.log(err.stack);
+    console.log('NOT exit...');
+  });
+
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
+
 let loadingParams = {
     width: 580,
     height: 200,
@@ -16,7 +25,12 @@ let mainParams = {
     icon: __dirname + '/icon.png',
     // titleBarStyle: 'hidden-inset',
     backgroundColor: '#fff',
-    show: false
+    show: false,
+    webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false,
+        enableRemoteModule: true
+    }
 };
 
 let mainWindow;

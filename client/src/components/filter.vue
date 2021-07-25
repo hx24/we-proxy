@@ -1,12 +1,9 @@
 <template>
-    <div id="filter">
-        <el-input
-            v-model="filterPattern"
-            placeholder="Filter"
-            icon="el-icon-circle-close"
-            :on-icon-click="clearFilterContent">
-        </el-input>
-    </div>
+  <div id="filter">
+    <el-input v-model="filterPattern" placeholder="Filter">
+      <i class="el-icon-circle-close el-input__icon" slot="suffix" @click="clearFilterContent"></i>
+    </el-input>
+  </div>
 </template>
 <script>
 import _ from 'lodash'
@@ -20,27 +17,27 @@ export default {
   },
   watch: {
     //watch 不能使用箭头函数 https://cn.vuejs.org/v2/api/#watch
-    filterPattern: function() {
-        this.changeFilterRecorder();
+    filterPattern: function () {
+      this.changeFilterRecorder()
     }
   },
   methods: {
-      changeFilterRecorder: _.debounce(function() {
-          this.$store.commit(types.CHANGE_RECORDER_FILTER, this.filterPattern);
-      }, 100),
-      clearFilterContent(ev) {
-          this.filterPattern = '';
-          this.$store.commit(types.CLEAR_RECORDER_FILTER);
-      }
+    changeFilterRecorder: _.debounce(function () {
+      this.$store.commit(types.CHANGE_RECORDER_FILTER, this.filterPattern)
+    }, 100),
+    clearFilterContent(ev) {
+      this.filterPattern = ''
+      this.$store.commit(types.CLEAR_RECORDER_FILTER)
+    }
   }
 }
 </script>
 <style lang="less">
 #filter {
-    display:inline-block;
-    margin-left: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }
 .el-input {
-    width: 200px;
+  width: 200px;
 }
 </style>

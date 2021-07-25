@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
     devServer: {
         port: 4000,     // 端口
@@ -8,5 +10,12 @@ module.exports = {
             return args
         })
     },
-    lintOnSave: false
+    lintOnSave: false, // 关闭eslint
+    configureWebpack: {
+        resolve: {
+            alias: {
+                '@': path.join(__dirname, 'src')
+            }
+        }
+    }
 }

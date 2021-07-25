@@ -4,7 +4,7 @@
   "description": "A Electron client for Anyproxy",
   "main": "main.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development electron .",
+    "start": "cross-env NODE_ENV=development electron --inspect=5858 .",
     "pack": "electron-packager . Anyproxy --out=pack --overwrite --ignore=client/node_modules --icon=icon.icns"
   },
   "repository": {
@@ -49,7 +49,8 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "devtron": "^1.4.0",
-    "electron": "^1.6.2",
-    "electron-packager": "^8.6.0"
+    "electron": "^13.1.7",
+    "electron-packager": "^15.3.0",
+    "electron-reloader": "^1.2.1"
   }
 }
