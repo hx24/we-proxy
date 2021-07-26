@@ -9,7 +9,7 @@ const menuTemplate = require('./menu.js');
 process.on('uncaughtException', function(err) {
     console.log(err.stack);
     console.log('NOT exit...');
-  });
+});
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
 

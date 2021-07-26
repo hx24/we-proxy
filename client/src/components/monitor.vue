@@ -248,6 +248,7 @@ h1 {
 .param-detail {
   margin-bottom: 10px;
   white-space: pre-wrap;
+  overflow: hidden;
 }
 .list .list-title {
   color: #638096;
