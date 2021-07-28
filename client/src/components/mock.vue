@@ -45,7 +45,7 @@
         当前项目：{{ currentProject.name }}
         <el-tooltip class="item" effect="light" placement="right">
           <div slot="content">注意：切换项目或勾选接口后要重新启动代理</div>
-          <i class="el-icon-information"></i>
+          <i class="el-icon-info"></i>
         </el-tooltip>
       </h2>
       <el-button type="primary" :plain="true" icon="el-icon-plus" @click="toAddPath">添加接口</el-button>
@@ -292,7 +292,7 @@ export default {
   h2 {
     color: #669999;
     margin-bottom: 27px;
-    .el-icon-information {
+    .el-icon-info {
       color: #ccc;
       font-size: 15px;
       vertical-align: 3px;

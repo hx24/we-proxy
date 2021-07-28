@@ -43,14 +43,19 @@ function getRuleModule(id) {
 
 //合并rule和mock(mock也是一种rule)
 function combineRuleAndMock(ruleid, mocks) {
-    let rules = getRuleModule(ruleid) || {};
-    if (!mocks) return rules;
+    // TODO 暂时使用证书规则，取消自定义规则
+    // let rule = getRuleModule(ruleid) || {};
+    let rule = require('./rule_api/crt') || {};
+    if (!mocks) return rule;
+    const { beforeSendRequest: ruleBeforeSendRequest } = rule
     //覆盖rules的beforeRequest
-    return Object.assign(rules, {
+    return Object.assign(rule, {
         *beforeSendRequest(requestDetail) {
             //先调用rules的beforeRequest
-            if (rules.beforeSendRequest) {
-                rules.beforeSendRequest(requestDetail);
+            if (ruleBeforeSendRequest) {
+                // TODO 流程控制
+                const ruleRes = yield ruleBeforeSendRequest(requestDetail);
+                if(ruleRes) return ruleRes
             }
             //再调用mock
             const reqOptions = requestDetail.requestOptions;
