@@ -290,7 +290,7 @@ module.exports = {
     saveCustomRuleToFile(id, rule) {
         const filename = 'custom_' + id + '.js';
         if (!fs.existsSync(ruleCustomPath)) {
-            fs.mkdir(ruleCustomPath);
+            fs.mkdirSync(ruleCustomPath);
         }
         
         const rulepath = path.resolve(ruleCustomPath, filename);
@@ -375,7 +375,7 @@ module.exports = {
         const filename = 'mock_' + id + '.js';
         return new Promise((resolve, reject) => {
             if (!fs.existsSync(mockCustomPath)) {
-                fs.mkdir(mockCustomPath);
+                fs.mkdirSync(mockCustomPath, () => {});
             }
             
             const mockpath = path.resolve(mockCustomPath, filename);

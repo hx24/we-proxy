@@ -57,8 +57,9 @@ class ProxyServer extends events.EventEmitter {
     this.proxyWebinterfaceConfig = config.webInterface;
     this.proxyConfigPort = config.webConfigPort || DEFAULT_CONFIG_PORT;    //TODO : port to ui config server
     
+    // https判断证书是否存在
     if (config.forceProxyHttps && !certMgr.ifRootCAFileExists()) {
-      throw new Error('root CA not found. can not intercept https'); // TODO : give a reference to user
+      throw new Error('root CA not found. can not intercept https'); // TODO 在window上提示用户
     } else if (this.proxyType === T_TYPE_HTTPS && !config.hostname) {
       throw new Error('hostname is required in https proxy');
     } else if (!this.proxyPort) {
