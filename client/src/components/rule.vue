@@ -40,7 +40,7 @@
             <el-button size="small" type="success" @click="handleCurrentChange(scope.$index, scope.row)" v-else>应用</el-button>
             <el-tooltip class="item" effect="light" placement="right">
               <div slot="content">注意：应用规则后要重新启动代理</div>
-              <i class="el-icon-information"></i>
+              <i class="el-icon-info"></i>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -274,7 +274,7 @@ export default {
       display: initial;
     }
   }
-  .el-icon-information {
+  .el-icon-info {
     color: #ccc;
     margin-left: 5px;
   }

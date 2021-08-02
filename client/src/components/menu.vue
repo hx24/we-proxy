@@ -58,6 +58,14 @@
         <div slot="content">下载证书</div>
         <el-button type="primary" :plain="true" @click="downloadRootCA">证书</el-button>
       </el-tooltip>
+      <el-popover placement="bottom" title="" width="200" trigger="click" class="crt-pop">
+        <div class="crt-downlond">
+          <img src="../assets/crt_qrcode.png" alt="crt_qrcode" />
+          <div class="crt-tip">使用手机扫描二维码或直接访问<i>we.pro/crt</i></div>
+          <div>具体安装方式同Fiddler或Charles</div>
+        </div>
+        <el-button slot="reference" type="primary" :plain="true">手机证书</el-button>
+      </el-popover>
     </div>
   </div>
 </template>
@@ -130,6 +138,7 @@ export default {
   }),
   methods: {
     toggleProxy() {
+      console.log('this.mockPaths', this.mockPaths)
       if (this.open) {
         this.stopProxy()
       } else {
@@ -312,5 +321,14 @@ export default {
 }
 .show-record-list .el-form-item__content {
   margin-left: 20px !important;
+}
+.crt-downlond {
+  text-align: center;
+  .crt-title {
+    font-size: 20px;
+  }
+}
+.crt-pop {
+  margin-left: 10px;
 }
 </style>

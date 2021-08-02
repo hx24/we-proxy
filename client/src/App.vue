@@ -8,9 +8,9 @@
       <div class="sidenav-item sidenav-monitor">
         <router-link to="/monitor">埋点查看</router-link>
       </div>
-      <div class="sidenav-item sidenav-rule">
+      <!-- <div class="sidenav-item sidenav-rule">
         <router-link to="/rule">拦截修改</router-link>
-      </div>
+      </div> -->
       <div class="sidenav-item sidenav-mock">
         <router-link to="/mock">接口Mock</router-link>
       </div>
