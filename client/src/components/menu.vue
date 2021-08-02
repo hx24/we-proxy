@@ -76,8 +76,8 @@ export default {
       openHttps: false,
       setting: {
         port: '8001',
-        forceProxyHttps: false,
-        global: false,
+        forceProxyHttps: true,
+        global: false, // TODO 这个参数在Proxy.js中没接收，没用
         throttle: null
       },
       throttleOptions: [

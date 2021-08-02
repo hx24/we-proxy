@@ -146,6 +146,7 @@ class ProxyServer extends events.EventEmitter {
           callback(null);
         },
 
+        // anyproxy自带的UI界面用来通信的websocket, 不需要
         //start web socket service
         // function(callback){
         //     self.ws = new wsServer({ port : self.proxyWsPort }, self.recorder);
