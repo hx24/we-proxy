@@ -54,8 +54,8 @@ class ProxyServer extends events.EventEmitter {
     this.proxyPort = config.port;
     this.proxyType = /https/i.test(config.type || DEFAULT_TYPE) ? T_TYPE_HTTPS : T_TYPE_HTTP;
     this.proxyHostName = config.hostname || 'localhost';
-    this.proxyWebinterfaceConfig = config.webInterface;
-    this.proxyConfigPort = config.webConfigPort || DEFAULT_CONFIG_PORT;    //TODO : port to ui config server
+    this.proxyWebinterfaceConfig = config.webInterface; // TODO 移除
+    this.proxyConfigPort = config.webConfigPort || DEFAULT_CONFIG_PORT;    //TODO : port to ui config server  移除
     
     // https判断证书是否存在
     if (config.forceProxyHttps && !certMgr.ifRootCAFileExists()) {
@@ -163,6 +163,7 @@ class ProxyServer extends events.EventEmitter {
         // },
 
         //start web interface
+        // TODO 移除
         function (callback) {
           if (self.proxyWebinterfaceConfig && self.proxyWebinterfaceConfig.enable) {
             const webInterface = require('./lib/webInterface');

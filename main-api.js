@@ -53,7 +53,7 @@ function combineRuleAndMock(ruleid, mocks) {
         *beforeSendRequest(requestDetail) {
             //先调用rules的beforeRequest
             if (ruleBeforeSendRequest) {
-                // TODO 流程控制
+                // TODO 待优化，流程控制
                 const ruleRes = yield ruleBeforeSendRequest(requestDetail);
                 if(ruleRes) return ruleRes
             }
@@ -88,6 +88,7 @@ function combineRuleAndMock(ruleid, mocks) {
 function createProxy(options) {
     return mainProxy || new ProxyServer(Object.assign({
         rule: combineRuleAndMock(options.ruleid, options.mock),
+        // TODO 移除
         webInterface: {
             enable: false,
         },
