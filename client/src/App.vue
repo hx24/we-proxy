@@ -15,7 +15,6 @@
         <router-link to="/mock">接口Mock</router-link>
       </div>
     </div>
-    <proxy-menu v-if="showMenu" :recordlist-view="showRecordView"></proxy-menu>
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
@@ -24,25 +23,19 @@
 
 <script>
 import router from './router'
-import proxyMenu from './components/menu.vue'
 
 export default {
   data() {
     return {
-      showRecordView: true,
       path: 'network',
       showMenu: true,
     }
-  },
-  components: {
-    proxyMenu
   },
   created() {
     const self = this
     router.beforeEach((to, from, next) => {
       const path = to.path.slice(1)
       this.path = path
-      self.showRecordView = path !== 'network'
       self.showMenu = path === 'network'
       next()
     })

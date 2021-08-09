@@ -1,5 +1,6 @@
 <template>
   <div id="network">
+    <proxy-menu></proxy-menu>
     <el-table
       id="nt-record-list"
       :data="tableData"
@@ -39,6 +40,7 @@ import { mapState } from 'vuex'
 // import proxyMenu from './menu.vue'
 import networkDetail from './network-detail.vue'
 import * as types from '../store/mutation-types'
+import proxyMenu from './menu.vue'
 
 export default {
   data() {
@@ -54,8 +56,8 @@ export default {
     }
   },
   components: {
-    networkDetail
-    // proxyMenu
+    networkDetail,
+    proxyMenu
   },
   computed: {
     tableData() {
@@ -111,74 +113,74 @@ export default {
   user-select: text;
   box-sizing: border-box;
   margin-top: 60px;
-}
-#network_pannel {
-  position: absolute;
-  top: 30px;
-  right: 0;
-  background-color: #fff;
-  width: 50%;
-  height: 100%;
-  overflow-y: scroll;
-  box-shadow: -3px 2px 9px rgba(0, 0, 0, 0.4);
-  z-index: 999;
-  padding: 10px;
-}
-.el-table .gray-row {
-  color: #999;
-}
-.el-table tr.current-row > td {
-  background-color: #58b7ff;
-}
-.el-table .success-row td:nth-child(3) {
-  color: #13ce66;
-}
-.el-table .error-row {
-  color: #ff4949;
-}
-.el-table .odd-row {
-  background: #fafafa;
-}
-.el-icon-close {
-  transition: transform 0.2s ease-in;
-  &:hover {
-    transform: rotate(180deg);
+  #network_pannel {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    width: 50%;
+    height: 100%;
+    overflow-y: scroll;
+    box-shadow: -3px 2px 9px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    padding: 10px;
   }
-}
-
-.el-tabs__content {
-  margin-bottom: 0;
-}
-.el-tabs__content {
-  height: 100%;
-  overflow-y: scroll;
-  padding: 20px;
-}
-
-#nt-record-list {
-  td {
-    height: 30px;
-    .cell {
-      white-space: nowrap;
+  .el-table .gray-row {
+    color: #999;
+  }
+  .el-table tr.current-row > td {
+    background-color: #58b7ff;
+  }
+  .el-table .success-row td:nth-child(3) {
+    color: #13ce66;
+  }
+  .el-table .error-row {
+    color: #ff4949;
+  }
+  .el-table .odd-row {
+    background: #fafafa;
+  }
+  .el-icon-close {
+    transition: transform 0.2s ease-in;
+    &:hover {
+      transform: rotate(180deg);
     }
   }
-}
 
-#close_panel {
-  position: absolute;
-  right: 12px;
-  top: 12px;
-}
+  .el-tabs__content {
+    margin-bottom: 0;
+  }
+  .el-tabs__content {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 20px;
+  }
 
-.slide-fade-enter-active {
-  transition: all 0.3s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.3s ease;
-}
-.slide-fade-enter,
-.slide-fade-leave-active {
-  transform: translate3d(200px, 0, 0);
-  opacity: 0;
+  #nt-record-list {
+    td {
+      height: 30px;
+      .cell {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  #close_panel {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+  }
+
+  .slide-fade-enter-active {
+    transition: all 0.3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all 0.3s ease;
+  }
+  .slide-fade-enter,
+  .slide-fade-leave-active {
+    transform: translate3d(200px, 0, 0);
+    opacity: 0;
+  }
 }
 </style>

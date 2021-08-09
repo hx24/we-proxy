@@ -36,8 +36,8 @@ export default {
 #filter {
   display: inline-block;
   margin-left: 10px;
-}
-.el-input {
-  width: 200px;
+  .el-input {
+    width: 200px;
+  }
 }
 </style>

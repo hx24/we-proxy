@@ -72,7 +72,7 @@ export default {
   },
   computed: {
     cookies() {
-      let cookies = this.headers.reqHeader.cookie || this.headers.reqHeader.Cookie
+      let cookies = this.headers.reqHeader?.cookie || this.headers.reqHeader?.Cookie
       if (cookies) {
         return cookies.split(';').map((item) => {
           return {
@@ -119,21 +119,23 @@ export default {
 }
 </script>
 <style lang="less">
-.el-collapse-item__header {
-  font-weight: 900;
-  height: 25px;
-  line-height: 25px;
-  background-color: #eee;
-}
-.el-collapse-item__content {
-  font-size: 12px;
-}
-.el-collapse .el-table .cell {
-  white-space: normal !important;
-}
-.el-collapse {
-  word-break: break-word;
-  font-size: 12px;
-  border: none;
+.network_detail {
+  .el-collapse-item__header {
+    font-weight: 900;
+    height: 25px;
+    line-height: 25px;
+    background-color: #eee;
+  }
+  .el-collapse-item__content {
+    font-size: 12px;
+  }
+  .el-collapse .el-table .cell {
+    white-space: normal !important;
+  }
+  .el-collapse {
+    word-break: break-word;
+    font-size: 12px;
+    border: none;
+  }
 }
 </style>

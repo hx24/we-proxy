@@ -96,60 +96,59 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .tree-view-item {
   font-family: monospace;
   font-size: 14px;
   margin-left: 18px;
-}
+  .tree-view-item-node {
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+  }
 
-.tree-view-item-node {
-  cursor: pointer;
-  position: relative;
-  white-space: nowrap;
-}
+  .tree-view-item-leaf {
+    white-space: nowrap;
+  }
 
-.tree-view-item-leaf {
-  white-space: nowrap;
-}
+  .tree-view-item-key {
+    color: #204a87;
+  }
 
-.tree-view-item-key {
-  color: #204a87;
-}
+  .tree-view-item-key-with-chevron {
+    padding-left: 14px;
+  }
 
-.tree-view-item-key-with-chevron {
-  padding-left: 14px;
-}
+  .tree-view-item-value-string {
+    color: #4e9a06;
+  }
+  .tree-view-item-value-boolean {
+    color: #c4a000;
+  }
+  .tree-view-item-value-number {
+    color: #ad7fa8;
+  }
+  .tree-view-item-key-with-chevron.opened::before {
+    top: 4px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+  }
 
-.tree-view-item-value-string {
-  color: #4e9a06;
-}
-.tree-view-item-value-boolean {
-  color: #c4a000;
-}
-.tree-view-item-value-number {
-  color: #ad7fa8;
-}
-.tree-view-item-key-with-chevron.opened::before {
-  top: 4px;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-}
+  .tree-view-item-key-with-chevron::before {
+    color: #444;
+    content: '\25b6';
+    font-size: 10px;
+    left: 1px;
+    position: absolute;
+    top: 3px;
+    transition: -webkit-transform 0.1s ease;
+    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+    -webkit-transition: -webkit-transform 0.1s ease;
+  }
 
-.tree-view-item-key-with-chevron::before {
-  color: #444;
-  content: '\25b6';
-  font-size: 10px;
-  left: 1px;
-  position: absolute;
-  top: 3px;
-  transition: -webkit-transform 0.1s ease;
-  transition: transform 0.1s ease;
-  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
-  -webkit-transition: -webkit-transform 0.1s ease;
-}
-
-.tree-view-item-hint {
-  color: #ccc;
+  .tree-view-item-hint {
+    color: #ccc;
+  }
 }
 </style>

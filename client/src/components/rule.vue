@@ -55,7 +55,6 @@ import { codemirror } from 'vue-codemirror'
 import util from '../lib/util'
 import _ from 'lodash'
 
-
 export default {
   data() {
     const self = this
@@ -232,54 +231,54 @@ export default {
     min-height: 320px;
     font-size: 13px;
   }
-}
-.rules-editor {
-  overflow: hidden;
-  padding: 20px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  -webkit-box-flex: 1;
-}
-.rules-editor__sample {
-  margin-bottom: 20px;
-  .el-select {
-    margin-left: 46px;
+  .rules-editor {
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
   }
-}
-.rules-editor__name .el-input {
-  width: 60%;
-  margin-left: 20px;
-}
-.el-textarea__inner {
-  height: 165px;
-}
-
-.rules-list {
-  width: 100%;
-  overflow: hidden;
-  padding: 10px;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-.rules-list .el-table {
-  margin-top: 20px;
-  .el-icon-check {
-    color: #13ce66;
-    margin-left: 5px;
-    display: none;
-  }
-  .current-row > td {
-    background-color: blanchedalmond;
-    .el-icon-check {
-      display: initial;
+  .rules-editor__sample {
+    margin-bottom: 20px;
+    .el-select {
+      margin-left: 46px;
     }
   }
-  .el-icon-info {
-    color: #ccc;
-    margin-left: 5px;
+  .rules-editor__name .el-input {
+    width: 60%;
+    margin-left: 20px;
   }
-}
-.el-button + .el-button {
-  margin-left: 0;
+  .el-textarea__inner {
+    height: 165px;
+  }
+
+  .rules-list {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  .rules-list .el-table {
+    margin-top: 20px;
+    .el-icon-check {
+      color: #13ce66;
+      margin-left: 5px;
+      display: none;
+    }
+    .current-row > td {
+      background-color: blanchedalmond;
+      .el-icon-check {
+        display: initial;
+      }
+    }
+    .el-icon-info {
+      color: #ccc;
+      margin-left: 5px;
+    }
+  }
+  .el-button + .el-button {
+    margin-left: 0;
+  }
 }
 </style>

@@ -281,44 +281,44 @@ export default {
       background-color: #669999;
     }
   }
-}
-.mock-project {
-  width: 200px;
-}
+  .mock-project {
+    width: 200px;
+  }
 
-.mock-path {
-  -webkit-box-flex: 1;
-  margin-left: 40px;
-  h2 {
-    color: #669999;
-    margin-bottom: 27px;
-    .el-icon-info {
-      color: #ccc;
-      font-size: 15px;
-      vertical-align: 3px;
+  .mock-path {
+    -webkit-box-flex: 1;
+    margin-left: 40px;
+    h2 {
+      color: #669999;
+      margin-bottom: 27px;
+      .el-icon-info {
+        color: #ccc;
+        font-size: 15px;
+        vertical-align: 3px;
+      }
+    }
+    .CodeMirror {
+      height: 200px;
     }
   }
-  .CodeMirror {
-    height: 200px;
+  .mock-path-editor {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    h4 {
+      padding: 10px 0;
+    }
   }
-}
-.mock-path-editor {
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  h4 {
-    padding: 10px 0;
+  .mock-path-editor__left,
+  .mock-path-editor__right {
+    width: 50%;
+    -webkit-box-flex: 1;
+    padding: 0 20px;
   }
-}
-.mock-path-editor__left,
-.mock-path-editor__right {
-  width: 50%;
-  -webkit-box-flex: 1;
-  padding: 0 20px;
-}
-.mock-path-editor__left {
-  border-right: 1px solid #ccc;
-}
-.mock-path__list {
-  margin-top: 20px;
+  .mock-path-editor__left {
+    border-right: 1px solid #ccc;
+  }
+  .mock-path__list {
+    margin-top: 20px;
+  }
 }
 </style>
