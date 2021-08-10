@@ -57,7 +57,7 @@
     "colorful": "^2.1.0",
     "commander": "~2.3.0",
     "compression": "^1.4.4",
-    "cross-os-proxy": "1.0.0",
+    "cross-os-proxy": "2.0.0",
     "express": "^4.8.5",
     "iconv-lite": "^0.4.6",
     "ip": "^0.3.2",

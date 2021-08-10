@@ -102,7 +102,6 @@ export default new Vuex.Store({
         const { method, url, startTime } = record
             if (method.toUpperCase() !== 'CONNECT') {
                 const monitorRecord = formatMonitorUrl(url, startTime)
-                console.log('monitorRecord', monitorRecord)
                 monitorRecord && res.push(monitorRecord)
             }
             return res

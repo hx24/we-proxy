@@ -1,4 +1,5 @@
 const { ipcMain, app, Menu, BrowserWindow } = require('electron');
+const osProxy = require('cross-os-proxy')
 const menuTemplate = require('./menu.js');
 
 
@@ -85,6 +86,7 @@ app.on('ready', () => {
 });
 
 app.on('window-all-closed', () => {
+    osProxy.closeProxy()
     if (process.platform !== 'darwin') {
         app.quit();
     }

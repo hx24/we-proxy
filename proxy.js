@@ -11,7 +11,7 @@ const http = require('http'),
   events = require('events'),
   ThrottleGroup = require('stream-throttle').ThrottleGroup;
 
-// const osProxy = require('cross-os-proxy');
+const osProxy = require('cross-os-proxy');
 
 const T_TYPE_HTTP = 'http',
   T_TYPE_HTTPS = 'https',
@@ -146,7 +146,7 @@ class ProxyServer extends events.EventEmitter {
         //start proxy server
         function (callback) {
           self.httpProxyServer.listen(self.proxyPort);
-          // self.startOsProxy()
+          self.startOsProxy()
           callback(null);
         },
 
@@ -224,7 +224,7 @@ class ProxyServer extends events.EventEmitter {
 
     this.status = PROXY_STATUS_CLOSED;
     logUtil.printLog('server closed ' + this.proxyHostName + ':' + this.proxyPort);
-    // this.closeOsProxy()
+    this.closeOsProxy()
     return this
   }
 
