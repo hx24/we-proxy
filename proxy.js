@@ -167,13 +167,13 @@ class ProxyServer extends events.EventEmitter {
 
         //start web interface
         // TODO 移除
-        function (callback) {
-          if (self.proxyWebinterfaceConfig && self.proxyWebinterfaceConfig.enable) {
-            const webInterface = require('./lib/webInterface');
-            self.webServerInstance = new webInterface(self.proxyWebinterfaceConfig, self);
-          }
-          callback(null);
-        },
+        // function (callback) {
+        //   if (self.proxyWebinterfaceConfig && self.proxyWebinterfaceConfig.enable) {
+        //     const webInterface = require('./lib/webInterface');
+        //     self.webServerInstance = new webInterface(self.proxyWebinterfaceConfig, self);
+        //   }
+        //   callback(null);
+        // },
       ],
 
       //final callback
