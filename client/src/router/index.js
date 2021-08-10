@@ -8,7 +8,7 @@ import proxyMonitor from '../components/monitor.vue'
 Vue.use(Router);
 
 const routes = [
-    {path: '/', component: proxyNetwork},
+    {path: '/', redirect: '/network'},
     {path: '/network', component: proxyNetwork},
     {path: '/rule', component: proxyRule},
     {path: '/mock', component: proxyMock},

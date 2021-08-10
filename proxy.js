@@ -11,6 +11,8 @@ const http = require('http'),
   events = require('events'),
   ThrottleGroup = require('stream-throttle').ThrottleGroup;
 
+// const osProxy = require('cross-os-proxy');
+
 const T_TYPE_HTTP = 'http',
   T_TYPE_HTTPS = 'https',
   DEFAULT_CONFIG_PORT = 8088,
@@ -144,6 +146,7 @@ class ProxyServer extends events.EventEmitter {
         //start proxy server
         function (callback) {
           self.httpProxyServer.listen(self.proxyPort);
+          // self.startOsProxy()
           callback(null);
         },
 
@@ -221,8 +224,22 @@ class ProxyServer extends events.EventEmitter {
 
     this.status = PROXY_STATUS_CLOSED;
     logUtil.printLog('server closed ' + this.proxyHostName + ':' + this.proxyPort);
-
+    // this.closeOsProxy()
     return this
+  }
+
+  /**
+   * 开启系统代理
+   */
+  startOsProxy() {
+    osProxy.setProxy('127.0.0.1', this.proxyPort)
+  }
+
+  /**
+   * 关闭系统代理
+   */
+  closeOsProxy() {
+    osProxy.closeProxy()
   }
 }
 

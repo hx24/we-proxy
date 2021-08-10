@@ -128,9 +128,9 @@ export default {
   .el-table .gray-row {
     color: #999;
   }
-  .el-table tr.current-row > td {
-    background-color: #58b7ff;
-  }
+  // .el-table tr.current-row > td {
+  //   background-color: #58b7ff;
+  // }
   .el-table .success-row td:nth-child(3) {
     color: #13ce66;
   }

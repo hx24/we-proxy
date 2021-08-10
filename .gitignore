@@ -30,3 +30,5 @@ mock_custom
 rules.json
 mock-project.json
 yarn.lock
+
+dist

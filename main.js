@@ -38,10 +38,8 @@ let mainWindow;
 function createWindow() {
     mainWindow = new BrowserWindow(mainParams);
     mainWindow.setTitle(require('./package.json').name);
-    mainWindow.webContents.openDevTools()
     //setting in .vscode/launch.json
     if (process.env.NODE_ENV === 'development') {
-        console.log('develop');
         mainWindow.loadURL('http://localhost:4000');
         mainWindow.webContents.openDevTools();
     } else {
